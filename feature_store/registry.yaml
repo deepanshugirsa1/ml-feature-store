@@ -1,0 +1,21 @@
+features:
+  - name: user_transaction_count_7d
+    version: 1
+    dtype: int
+    freshness_sla_hours: 1
+    source: fct_transactions
+  - name: user_avg_spend_30d
+    version: 1
+    dtype: float
+    freshness_sla_hours: 6
+    source: fct_transactions
+  - name: user_days_since_signup
+    version: 1
+    dtype: int
+    freshness_sla_hours: 24
+    source: dim_users
+  - name: user_failed_payment_rate
+    version: 1
+    dtype: float
+    freshness_sla_hours: 1
+    source: fct_payments
