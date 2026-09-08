@@ -1,20 +1,23 @@
-# Roadmap to 100%
+# Roadmap
 
-## Phase 1 (done ~60%)
+## Phase 1 — done (runs locally, tested, CI)
 - [x] Feature registry YAML with versioning
 - [x] Kafka + Kinesis ingestion simulators
-- [x] Point-in-time correct feature joins
-- [x] Freshness + schema drift monitoring stubs
-- [x] Offline feature materialization pipeline
+- [x] Point-in-time correct feature joins (offline store)
+- [x] Online feature store (low-latency KV lookup) + training/serving contract
+- [x] Churn-risk model training with AUC reporting
+- [x] FastAPI serving layer — real-time, explicit-vector, and batch inference
+- [x] Freshness + schema drift monitoring
+- [x] Unit tests (pipeline, online store, serving) + GitHub Actions CI
 
-## Phase 2 (70-85%)
-- [ ] Deploy to Redshift + Snowflake with dbt models
-- [ ] Real Kafka / Kinesis on AWS
-- [ ] Feature-level anomaly alerts (CloudWatch)
-- [ ] Automated regression gates before model retraining
+## Phase 2 — managed AWS deployment
+- [ ] Offline store on Redshift + Parquet in S3, built with dbt models
+- [ ] Real Kafka (MSK) / Kinesis Firehose ingestion
+- [ ] DynamoDB online store with TTL and versioned feature groups
+- [ ] Feature-level anomaly alerts via CloudWatch
 
-## Phase 3 (85-100%)
-- [ ] Online feature serving API (low-latency lookup)
+## Phase 3 — MLOps hardening
 - [ ] Backfill orchestration with Airflow
+- [ ] Automated regression gates before model retraining
 - [ ] Feature lineage and impact analysis
 - [ ] A/B feature versioning for experimentation

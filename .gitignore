@@ -12,5 +12,12 @@ logs/
 .idea/
 .vscode/
 *.parquet
+*.joblib
+artifacts/
 data/raw/*.csv
+data/online/
+data/features/
+data/kafka_stream/
+data/kinesis_stream/
+.pytest_cache/
 !data/raw/.gitkeep
